@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Bank Management System",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${fileDirname}/main.cpp",
+                "-o",
+                "build/${fileBasenameNoExtension}.exe",
+                "-ID:/msys64/ucrt64/include",
+                "-LD:/msys64/ucrt64/lib",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-std=c++23",
+				// DEPENDENCIES
+				"-lsqlite3", // SQLITE
+
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+}
